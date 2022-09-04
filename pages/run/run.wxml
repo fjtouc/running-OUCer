@@ -1,0 +1,28 @@
+
+
+<view class="head" style="flex-direction:row;">
+  <image src="{{checked?'/resources/play.png':'/resources/pause.png'}}" class="music {{!checked && 'circle'}}" catchtap="checkMusic"></image>
+    <text>\n</text>
+    <button bindtap="starRun" style="color: rgb(5, 172, 88);">Start</button>
+    <text>\n</text>
+    <button bindtap="stopRun" style="color: rgb(175, 9, 9);">Stop</button>
+    <view class="lcsj" style="position: relative; left: 146rpx; top: -1rpx">
+      <text class="txt" style="position: relative; left: -86rpx; top: 10rpx">\n里程：\n{{meters}}km</text>
+      <text class="txt" style="position: relative; left: 0rpx; top: 0rpx; width: 146rpx; height: 120rpx; display: block; box-sizing: border-box" bindtap="getTime">\n时间：\n{{Time}}</text>
+      <text class="txt" style="position: relative; left: 124rpx; top: 10rpx">\n时长：\n{{time}}</text>
+    </view>
+</view>
+
+<view class="mainView">
+   <map
+        class="mapView"
+        style="width: 100%; height: 375px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        >
+    </map>
+
+</view>
+

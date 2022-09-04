@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container" >
+  <view class='header' style="position: relative; left: 0rpx; top: -200rpx">
+    <text class='header_text' style="position: relative; left: 4rpx; top: 0rpx;font-weight: lighter;">我的运动任务</text>
+    <image src='/resources/editor.png' class='editor_icon' bindtap="editor" ></image>
+    <image src='/resources/add.png' class="plus_img" bindtap="add"  style="position: absolute; left: 617rpx; top: 24rpx"></image>
+  </view>
+  <scroll-view class='some_list'>
+    <view class='list_item' wx:for="{{list}}" data-index="{{index}}" >
+      <image 
+      data-index='{{index}}' 
+      data-src='{{item.check ? "/resources/check_true.png" : "/resources/check_false.png" }}' 
+      bindtap='check' 
+      src='{{item.check ? "/resources/check_true.png" : "/resources/check_false.png" }}' 
+      class="list_check {{chexkStatus ? 'show' : 'hide'}} "></image>
+      <view class='{{chexkStatus ? "list_pad" : "list_rgt"}}'  bindtap='listDetail'>
+        <view class='list_time'>{{item.time}}</view>
+        <view class='list_title'>{{item.title}}</view>
+        <view class='list_text'><text class='create_time'>{{item.create_time}}</text>{{item.text}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="bottom_btn_box {{chexkStatus ? 'show' : 'hide'}} ">
+    <button class='editor_btn' bindtap='save'>完成</button>
+    <button class='delete_btn' bindtap='delHandel'>删除</button>
+  </view> 
+</view>

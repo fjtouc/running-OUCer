@@ -1,0 +1,16 @@
+<view class='container'>
+  <view class='header' style="position: relative; left: 1rpx; top: -202rpx; width: 750rpx; height: 88rpx; display: block; box-sizing: border-box">
+    <text class='header_text' style="position: relative; left: -2rpx; top: 0rpx">选择模板</text>
+  </view>
+  <view class='model_box clearfix'>
+    <view class='model_item' wx:for="{{modelSrc}}" >
+      <image 
+        src='{{item}}' 
+        class="model_img {{currentModelIndex==index?'model_active':''}}" 
+        bindtap='imgChange' 
+        data-current="{{index}}" ></image>
+    </view>
+
+  </view>
+  <button class='model_btn' bindtap='saveModel'>保存</button>
+</view>
